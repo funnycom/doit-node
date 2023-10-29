@@ -1,0 +1,14 @@
+<a href="/allPosts">&larr; 뒤로</a>
+<div class="admin-title">
+  <h2><%= locals.title %></h2>
+</div>
+
+<form action="/add" method="POST">
+  <label for="title"><b>제목</b></label>
+  <input type="text" placeholder="게시물 제목" name="title" id="title">
+  
+  <label for="body"><b>내용</b></label>
+  <textarea placeholder="게시물 내용" name="body" cols="50" rows="10"></textarea>
+
+  <input type="submit" value="등록" class="btn">
+</form>
