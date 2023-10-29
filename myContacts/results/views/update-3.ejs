@@ -1,0 +1,41 @@
+<!-- include header -->
+<%- include('./include/_header') %>
+<!-- /include header -->
+
+  <!-- Main -->
+    <main id="site-main">
+      <div class="button-box">        
+        <a href="/contacts" class="btn btn-light"><i class="fa-solid fa-list"></i>연락처 목록</a>
+      </div>
+      <h2>연락처 수정</h2>          
+      <p>연락처 정보를 수정합니다.</p>
+      <form action="/contacts/<%= contact._id %>?_method=PUT" method="POST" id="add-user" >
+        <div class="user-info">
+          <div class="col-12">
+            <label for="name" class="col-form-label">이름(Full Name)</label>
+            <div>
+              <input type="text" class="form-control" name="name" id="name" value="<%= contact.name %>">
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="email" class="col-form-label">메일 주소(E-mail)</label>
+            <div>
+              <input type="text" class="form-control" name="email" id="email" value="<%= contact.email %>">
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="phone" class="col-form-label">전화번호(Mobile)</label>
+            <div>
+              <input type="text" class="form-control" name="phone" id="phone" value="<%= contact.phone %>">
+            </div>
+          </div>
+          <button type="submit">수정하기</button>
+        </div>
+      </form>   
+    </main>
+
+  <!-- /Main -->
+
+<!-- include footer -->
+<%- include('./include/_footer') %>
+<!-- /include footer -->

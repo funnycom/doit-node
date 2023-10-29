@@ -1,0 +1,43 @@
+<!-- include header -->
+<%- include('./include/_header') %>
+<!-- /include header -->
+
+  <!-- Main -->
+  <main id="site-main">
+    <div class="button-box">
+      <a href="/contacts/add" class="btn btn-light"><i class="fa-solid fa-user-plus"></i>연락처 추가</a>
+    </div>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>메일 주소</th>
+          <th>전화번호</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% contacts.forEach(contact => { %>
+        <tr>
+          <td><%= contact.name %></td>
+          <td><%= contact.email %></td>
+          <td><%= contact.phone %></td>
+          <td>
+            <a href="/contacts/<%= contact._id %>" class="btn update" title="수정">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+            <a href="#" class="btn delete" title="삭제">
+              <i class="fas fa-times"></i>
+            </a>                
+          </td>
+        </tr>
+        <% }); %> 
+      </tbody>
+    </table>
+  </main>
+  <!-- /Main -->
+
+<!-- include footer -->
+<%- include('./include/_footer') %>
+<!-- /include footer -->

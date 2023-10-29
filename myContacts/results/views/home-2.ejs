@@ -1,0 +1,23 @@
+<!-- include header -->
+<%- include('./include/_header') %>
+<!-- /include header -->
+
+  <!-- Main -->
+  <main id="site-main">
+
+      <h3>로그인</h3>     
+
+      <form action="/" method="POST" class="login">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="사용자 아이디" name="username" id="username">
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="비밀번호" name="password" id="password">
+      
+        <button type="submit" class="login-btn">로그인</button>
+      </form>
+  </main>
+  <!-- /Main -->
+
+<!-- include footer -->
+<%- include('./include/_footer') %>
+<!-- /include footer -->
