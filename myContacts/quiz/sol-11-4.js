@@ -2,4 +2,6 @@
 
 app.delete("/form", (req, res) => {
   res.send("Deleted!");
+  res.end();
+  // res.end("Deleted!"); // 위와 동일한 결과
 });
