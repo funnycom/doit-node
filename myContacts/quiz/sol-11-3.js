@@ -2,5 +2,4 @@
 
 app.post("/form", (req, res) => {
   console.log(req.body.username);
-  res.send("완료!");
 });
