@@ -19,14 +19,15 @@ const checkLogin = (req, res, next) => {
   // 토큰이 없으면 로그인 페이지로 이동
   if (!token) {
     res.redirect("/admin");
-  }
-  // 토큰이 있다면 토큰을 확인하고 사용자 정보를 요청에 추가
-  try {
-    const decoded = jwt.verify(token, jwtSecret); // 토큰 해석하기
-    req.userId = decoded.userId; // 토큰의 사용자 ID를 요청에 추가
-    next();
-  } catch (error) {
-    res.redirect("/admin");
+  } else {
+    // 토큰이 있다면 토큰을 확인하고 사용자 정보를 요청에 추가
+    try {
+      const decoded = jwt.verify(token, jwtSecret); // 토큰 해석하기
+      req.userId = decoded.userId; // 토큰의 사용자 ID를 요청에 추가
+      next();
+    } catch (error) {
+      res.redirect("/admin");
+    }
   }
 };
 
